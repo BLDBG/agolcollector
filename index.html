@@ -17,7 +17,26 @@
         height: 100vh;
         width: 100vw;
         overflow: hidden;
-     }
+      }
+      
+      .addRecordBtn {
+        position: absolute;
+        z-index: 10;
+        top: 10px;
+        right: 10px;
+        background-color: #0079c1;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .addRecordBtn:hover {
+        background-color: #005a87;
+      }
     </style>
 
     <!-- importing the css and libraries for esri.js -->
@@ -81,6 +100,7 @@
   </head>
   <body>
 
+    <a href="https://survey123.arcgis.com/share/939396f4d220478daa70f53321a47e7f" target="_blank" class="addRecordBtn">Add Record</a>
     <div id="viewDiv"></div>
 
   </body>
