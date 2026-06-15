@@ -43,7 +43,7 @@
           center: [-87.8131, 42.5811], // Longitude, latitude format
           zoom: 6, // Zoom scale level
         });
-        
+
         const locateBtn = new Locate({
           view: view
         });
@@ -55,6 +55,7 @@
 
         const searchWidget = new Search({
           view: view
+          container: null
         });
         
         const searchExpand = new Expand({
@@ -65,7 +66,7 @@
 
         // Add the expand widget to the view instead of the search widget
         view.ui.add(searchExpand, {
-          position: "top-right",
+          position: "bottom-right",
           index: 0
         });
 
