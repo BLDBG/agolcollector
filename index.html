@@ -27,22 +27,40 @@
     <!-- loading modules -->
     <script>
       require([ 
-        "esri/config","esri/Map","esri/views/MapView"], 
-        (esriConfig, Map, MapView) => {
+        "esri/config","esri/Map","esri/views/MapView","esri/widgets/Search","esri/widgets/Expand"], 
+        (esriConfig, Map, MapView, Search, Expand) => {
         
         // set the API key - new commented out for testing
          esriConfig.apiKey = "AAPTanQncLZrZf5ur6pM-ljzNxg..i-VpfICarg1tjz10faxck-Zge3EjZ7zUUP6cbX081l71ELCp9bpgqiXurYSbhs0fDmOXMQXAyGeiHz6r66t7EHfdRLO-CHh0jjakX3bxMaWeDs_FW1ECWOu3cH9p_uFnmikXqwfxpBtMbKtKduCMoKi4NsJLd979B2jQuh6qA8C7XL6pc-Zsj47-Mbr-jDGLgR_QEzkw_Qgpi8Q4oJ-Tc-g8-3Y2Q9sE_mfixuiuCYkRfvXy_LtaeqpybeLD6TZomJ_jjRIL7QE.AT1_ZP956a50";
-        // testing API key from previous labs
-        // esriConfig.apiKey = "AAPTaXW4BVW_ro3UyCh2wpLtbsw..S4T9V5K_hlh_60RGW9t_q7htVqq7iscsvxjm7dd1G8h2i2HUDFCe1l-xBCMaummjmRdIHDLSbsD8DI04VAG9NpUw0YA_nIOccQtabmzOOAcTL6hKl7cTkLMIlXQgwoVMZJbFA3l6_6KFWsMeGQQJCIydC6G0tbHy3E12vEZknZ7DtoweCnBZa-zK4eZnLJPEOQ6f-5q6gQv_sdJZgPHH1FcV0esU1rH-iaopU2P7UXhTG_o68RTsAtcuGj1TIC8dZNJu8W8ieWk.AT1_5tp0GXlO";
-
+        
         const map = new Map({
           basemap: "satellite"
         });
 
         const view = new MapView({
           container: "viewDiv", // Reference to the DOM node that will contain the view
-          map: map // References the map object
+          map: map, // References the map object
+          center: [-87.8131, 42.5811], // Longitude, latitude format
+          zoom: 14, // Zoom scale level
         });
+
+        const search = new Search({
+          view: view
+        });
+        
+        const searchExpand = new Expand({
+          view: view,
+          content: searchWidget,
+          expandIcon: "search"
+        });
+
+        // Add the expand widget to the view instead of the search widget
+        view.ui.add(searchExpand, {
+          position: "top-left",
+          index: 0
+        });
+
+        
 
       });
     
