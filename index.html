@@ -17,8 +17,8 @@
         height: 100vh;
         width: 100vw;
         overflow: hidden;
- }
-</style>
+     }
+    </style>
 
     <!-- importing the css and libraries for esri.js -->
     <link rel="stylesheet" href="https://js.arcgis.com/5.0/esri/themes/light/main.css" />
@@ -26,7 +26,11 @@
 
     <!-- loading modules -->
     <script>
-      require([ "esri/config", "esri/Map", "esri/views/MapView" ], (esriConfig, Map, MapView) => {
+      require([ 
+        "esri/Config", 
+        "esri/Map", 
+        "esri/views/MapView" 
+    ], function(esriConfig, Map, MapView)  {
         
         // set the API key
         esriConfig.apiKey = "AAPTanQncLZrZf5ur6pM-ljzNxg..i-VpfICarg1tjz10faxck-Zge3EjZ7zUUP6cbX081l71ELCp9bpgqiXurYSbhs0fDmOXMQXAyGeiHz6r66t7EHfdRLO-CHh0jjakX3bxMaWeDs_FW1ECWOu3cH9p_uFnmikXqwfxpBtMbKtKduCMoKi4NsJLd979B2jQuh6qA8C7XL6pc-Zsj47-Mbr-jDGLgR_QEzkw_Qgpi8Q4oJ-Tc-g8-3Y2Q9sE_mfixuiuCYkRfvXy_LtaeqpybeLD6TZomJ_jjRIL7QE.AT1_ZP956a50";
