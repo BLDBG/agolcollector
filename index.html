@@ -55,19 +55,14 @@
 
         const searchWidget = new Search({
           view: view,
+          placeholder: "Enter address or place...",
           container: null
         });
         
-        const searchExpand = new Expand({
-          view: view,
-          content: searchWidget,
-          expandIcon: "search"
-        });
 
         // Add the expand widget to the view instead of the search widget
-        view.ui.add(searchExpand, {
+        view.ui.add(searchWidget, {
           position: "bottom-right",
-          index: 0
         });
 
         
